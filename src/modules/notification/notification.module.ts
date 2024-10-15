@@ -2,19 +2,10 @@ import { Module } from '@nestjs/common';
 import { NotificationService } from './notification.service';
 import { NotificationController } from './notification.controller';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [
-    MailerModule.forRoot({
-      transport: {
-        host: 'smtp.gmail.com',
-        auth: {
-          user: 'anjani3032@gmail.com',
-          pass: 'c37b3e75-6088-4815-b363-094be78dea29',
-        },
-      },
-    }),
-  ],
+  imports: [ConfigModule],
   providers: [NotificationService],
   controllers: [NotificationController],
 })
