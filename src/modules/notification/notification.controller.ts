@@ -8,7 +8,7 @@ export class NotificationController {
 
   @Get()
   getNotification(): string {
-    return `notification services callled`;
+    return `notification services called`;
   }
   @Post('send')
   async sendEmail(@Body() dto: sendMailDto) {

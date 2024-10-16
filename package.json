@@ -37,6 +37,8 @@
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "postmark": "^4.0.5",
+    "pug": "^3.0.3",
+    "pug-load": "^3.0.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
