@@ -85,7 +85,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 ## GRPC
-npm install ts-proto
-npm i --save @grpc/grpc-js @grpc/proto-loader
-npm i --save @grpc/reflection
+- npm install ts-proto
+- npm i --save @grpc/grpc-js @grpc/proto-loader
+- npm i --save @grpc/reflection
 - to create interfaces using proto - protoc --plugin="RELATIVE PATH TO NODE MODULE".bin/protoc-gen-ts_proto --ts_proto_out=. "RELATIVE PATH TO YOUR PROTO FILE".proto
