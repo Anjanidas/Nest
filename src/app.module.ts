@@ -8,6 +8,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from './schema/user.schema';
 import { NotificationModule } from './modules/notification/notification.module';
 import { ConfigModule } from '@nestjs/config';
+import { HeroModule } from './modules/hero/hero.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ConfigModule } from '@nestjs/config';
     MongooseModule.forRoot('mongodb://localhost:27017/nest'),
     MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
     ConfigModule.forRoot(),
+    HeroModule,
   ],
   controllers: [AppController],
   providers: [AppService],
