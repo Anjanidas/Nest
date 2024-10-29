@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package notifications;
+
+service NoticationsService {
+    rpc getNotif(empty) returns (greetings) {}
+}
+
+message empty {}
+message greetings {
+    string greet = 1;
+}

@@ -12,6 +12,7 @@ import {
   ValidationPipe,
   HttpException,
   HttpStatus,
+  Query,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { createUserDto } from './dto/createUser.dto';
@@ -48,11 +49,11 @@ export class UsersController {
   // }
 
   @Post()
-  async createUser(@Body() createUserDto: createUserDto) {
+  async createUser(@Body() createUserDto: any) {
     return this.userService.create(createUserDto);
   }
 
-  @Get()
+  @Get(':id')
   async getUsers() {
     try {
       return await this.userService.findAll();
@@ -69,14 +70,24 @@ export class UsersController {
       );
     }
   }
-
+  @Get()
+  async getByAge(@Query('age') age: string) {
+    const parsedAge = parseInt(age, 10);
+    return this.userService.getByAge(parsedAge);
+  }
   @Put(':id')
   async updateUser(@Param('id') id: string, @Body() userDto: createUserDto) {
     return this.userService.update(id, userDto);
   }
 
-  @Delete(':id')
-  async deleteUser(@Param('id') id: string, @Body() userDto: createUserDto) {
-    return this.userService.delete(id, userDto);
+  // @Delete()
+  // async deleteUser(@Query('age') age: string) {
+  //   const parsedAge = parseInt(age, 10);
+  //   return this.userService.delete(parsedAge);
+  // }
+
+  @Delete()
+  async deleteAll() {
+    return this.userService.deleteAll();
   }
 }
